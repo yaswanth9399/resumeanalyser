@@ -25,6 +25,9 @@ namespace SmartResumeAnalyzer.API
 
             services.AddSingleton(new OpenAIAPI(Configuration["OpenAI:ApiKey"]));
             services.AddScoped<IResumeAnalyzer, ResumeAnalyzer>();
+            services.AddScoped<IResumeAnalyzer, ResumeAnalyzer>();
+            services.AddScoped<IResumeAnalyzer, MockResumeAnalyzer>();
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
